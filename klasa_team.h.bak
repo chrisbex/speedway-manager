@@ -1,0 +1,29 @@
+class Team
+{
+	public:
+		Team();
+		Team(char *TeamName);
+		~Team();
+
+	private:
+		char *itsName;
+		Zawodnik itsPlayer[20];
+};
+
+Team::Team()
+{
+	itsName=new char[10];
+	itsName="New Team";
+};
+
+Team::Team(char *TeamName)
+{
+	itsName=new char[sizeof(TeamName)];
+	strcpy(itsName, TeamName);
+};
+
+Team::~Team()
+{
+	delete [] itsPlayer;
+	delete [] itsName;
+};

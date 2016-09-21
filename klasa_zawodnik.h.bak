@@ -1,0 +1,100 @@
+class Zawodnik
+{
+	public:
+		// Konstruktory i destruktory
+		Zawodnik();
+		~Zawodnik();
+
+		// Get Functions
+		int GetForma() { return itsForma; };
+		int GetRefleks() { return itsReflex; };
+		int GetNumber() { return itsNumber; };
+		int GetIloscMechanikow() { return itsIloscMechanikow; };
+		int GetStart() { return itsStart; };
+		int GetWalka() { return itsWalka; };
+		float GetKSM() { return itsKSM; };
+		int GetPower() { return itsPower; };
+		int GetTechnika_Jazdy() { return itsTechnika_Jazdy; };
+		int GetZdrowie() { return itsZdrowie; };
+		int GetWiek() { return itsWiek; };
+		int GetOpony() { return itsOpony; };
+		int GetMorale() { return itsMorale; };
+		int GetIloscPkt() { return itsIloscPkt; };
+		int GetIloscBonusow() { return itsIloscBonusow; };
+		int GetIloscBiegow() { return itsIloscBiegow; };
+		int GetIloscMeczow() { return itsIloscMeczow; };
+		status_zawodnika_t GetStatus() { return itsStatus; };
+				
+		//Set Functions
+		void SetForma(int value) { itsForma=value; };
+		void SetRefleks(int value) { itsReflex=value; };
+		void SetNumber(int value) { itsNumber=value; };
+		void SetImie(char *noweImie);
+		void SetNazwisko(char *noweNazwisko);
+		void SetIloscMechanikow(int value) { itsIloscMechanikow=value; };
+		void SetStart(int value) { itsStart=value; };
+		void SetWalka(int value) { itsWalka=value; };
+		void SetKSM(float value) { itsKSM=value; };
+		void SetZdrowie(int value) { itsZdrowie=value; };
+		void SetWiek(int value) { itsWiek=value; };
+		void SetOpony(int value) { itsOpony=value; };
+		void SetNarodowosc(char *value) { strcpy(itsNarodowosc, value); };
+		void SetStatus(status_zawodnika_t value) { itsStatus=value; };
+		void SetMorale(int value) { itsMorale=value; };
+		void SetIloscPkt(int value) { itsIloscPkt=value; };
+		void SetIloscBonusow(int value) { itsIloscBonusow=value; };
+		void SetIloscBiegow(int value) { itsIloscBiegow=value; };
+		void SetIloscMeczow(int value) { itsIloscMeczow=value; };
+		
+	private:
+		int itsForma;
+		int itsRefleks;
+		int itsNumber;
+		int itsStart;
+		int itsTechnika_Jazdy;
+		int itsWalka;
+		int itsPower;
+		int itsIloscMechanikow;
+		float itsKSM;
+		int itsZdrowie;
+		int itsWiek;
+		int itsOpony;
+		char *itsImie, *itsNazwisko;
+		char *itsNarodowosc;
+		Motor itsMotor;
+		bool isWypozyczony;
+		status_zawodnika_t itsStatus;
+		int itsMorale;
+		int itsIloscPkt;
+		int itsIloscBonusow;
+		int itsIloscBiegow;
+		int itsIloscMeczow;
+};
+
+Zawodnik::Zawodnik()
+{
+	itsForma=0;
+	itsRefleks=0;
+	itsNumber=0;
+	isWypozyczony=0;
+};
+
+Zawodnik::~Zawodnik()
+{
+	delete [] itsImie;
+	delete [] itsNazwisko;
+};
+
+void Zawodnik::SetImie(char *noweImie)
+{
+	itsImie=new char[newImie.GetLenght()];
+	strcpy(itsImie, noweImie);
+};
+
+void Zawodnik::SetNazwisko(char *noweNazwisko)
+{
+	itsNazwisko=new char[newNazwisko.GetLenght()];
+	strcpy(itsNazwisko, noweNazwisko);
+};
+
+

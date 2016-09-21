@@ -1,0 +1,47 @@
+// Class For Speedway Manager
+// uses allegro.h
+
+class KButton
+{
+	public:
+		KButton(char *caption, int X, int Y, int W, int H);
+		KButton();
+		~KButton() { destroy_bitmap(obraz); };
+		void draw_button();
+
+	private:
+		BITMAP *obraz;
+		char *itsCaption;
+		int itsX, itsY;
+		int itsW, itsH;
+};
+
+KButton::KButton(char *caption, int X, int Y, int W, int H)
+{
+	itsCaption=new char[strlen(caption)];
+	strcpy(itsCaption, caption);
+	itsX=X;
+	itsY=Y;
+	itsW=W;
+	itsH=H;
+	obraz=create_bitmap(itsW, itsH);
+	clear_to_color(obraz, makecol(255,0,0));
+};
+
+KButton::KButton()
+{
+	itsX=30; 
+	itsY=30;
+	itsW=50;
+	itsH=15;
+	obraz=create_bitmap(itsW, itsH);
+};
+
+void KButton::draw_button()
+{
+	textprintf_ex(obraz, font, itsW%2+itsW/2, itsH%2+itsH/2, makecol(255,255,255), -1, "%s", itsCaption);
+	acquire_screen();
+	draw_sprite(screen, obraz, itsX, itsY);
+	release_screen();
+};
+
