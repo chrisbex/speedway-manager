@@ -1,0 +1,8 @@
+1 "KS Torun"
+2 "Bydgoszcz"
+3 "Rzeszow"
+4 "RKM Rybnik"
+5 "Tarnow"
+6 "Wroclaw"
+7 "Czestochowa"
+8 "Leszno"
